@@ -1,4 +1,6 @@
-const { NotImplementedError } = require('../extensions/index.js');
+const {
+  NotImplementedError
+} = require('../extensions/index.js');
 
 /**
  * Calculate turns number and time (in seconds) required
@@ -15,10 +17,15 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function calculateHanoi(discNumber, speed) {
-let moves = Math.pow(2, discNumber) - 1;
-let oneMove = moves / 60 / 60;
+  let moves = Math.pow(2, discNumber) - 1;
+  let oneMoveSpeed = speed / 60 / 60;
+  console.log(oneMoveSpeed);
+  let gameTimeAmount = Math.floor(moves / oneMoveSpeed);
 
-return { turns: moves, seconds: oneMove }
+  return {
+    turns: moves,
+    seconds: gameTimeAmount
+  }
 }
 
 module.exports = {
