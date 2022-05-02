@@ -24,6 +24,7 @@ const { NotImplementedError } = require('../extensions/index.js');
           }
       }
   }
+  return count;
 }
 
 module.exports = {
