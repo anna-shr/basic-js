@@ -15,7 +15,7 @@ const {
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  * 
  */
- function transform(array) {
+function transform(array) {
   if (Array.isArray(array) == false) {
     throw new NotImplementedError("'arr' parameter must be an instance of the Array!");
   }
@@ -28,8 +28,9 @@ const {
       arr = arr.splice(arr[0], 1);
       return arr;
     } else {
-    let removed = arr.splice(ind - 1, 2);
-    return arr;
+      let removed = arr.splice(ind - 1, 2);
+      return arr;
+    }
   }
 
   if (ind = arr.findIndex(i => i === '--discard-next')) {
@@ -43,9 +44,8 @@ const {
   }
 
   if (ind = arr.findIndex(i => i === '--double-prev')) {
-      let removed = arr.splice(ind, 1, ind);
-      return arr;
-    }
+    let removed = arr.splice(ind, 1, ind);
+    return arr;
   }
 
   if (ind = arr.findIndex(i => i === '--double-next')) {
@@ -53,7 +53,6 @@ const {
     return arr;
   }
 }
-
 
 
 

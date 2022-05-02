@@ -14,13 +14,13 @@ const {
  * 
  */
 function getSeason(date) {
-  if (typeof date.getMonth !== 'function') {
-    throw new NotImplementedError("Invalid date!");
-  }
+
   if (date === undefined) {
     return 'Unable to determine the time of year!';
   }
-
+  if (typeof date.getMonth !== 'function') {
+    throw new NotImplementedError("Invalid date!");
+  }
   let season = date.getMonth();
   if (season == 0 || season == 1 || season == 11) {
     return "winter";
